@@ -23,4 +23,4 @@ async function ver(){
 
 boton_enviar.addEventListener('click', enviar)
 document.addEventListener("DOMContentLoaded",ver)
-
+ver()
