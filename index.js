@@ -6,16 +6,14 @@ const url_api_ver = 'https://api_chat-1-p3052353.deta.app/ver/'
 
 async function enviar(){
     await fetch(url_api+ String(input_chat.value))
-    let p = document.createElement('p')
-    p.innerHTML = String(input_chat.value)
-    chat.appendChild(p)
     input_chat.value = ''
-    location.reload()
+    ver()
 }
 
 async function ver(){
     let x = await fetch(url_api_ver)
     x = await x.json()
+    chat.innerHTML = ''
     x.forEach(element=>{
         let p = document.createElement('p')
         p.innerHTML = element
@@ -25,6 +23,4 @@ async function ver(){
 
 boton_enviar.addEventListener('click', enviar)
 document.addEventListener("DOMContentLoaded",ver)
-setTimeout(function() {
-    location.reload();
-}, 2000);
+
