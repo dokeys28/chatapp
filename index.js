@@ -10,6 +10,7 @@ async function enviar(){
     p.innerHTML = String(input_chat.value)
     chat.appendChild(p)
     input_chat.value = ''
+    location.reload()
 }
 
 async function ver(){
@@ -24,3 +25,4 @@ async function ver(){
 
 boton_enviar.addEventListener('click', enviar)
 document.addEventListener("DOMContentLoaded",ver)
+
